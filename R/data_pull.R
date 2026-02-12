@@ -20,6 +20,15 @@ library(sf)
 library(ggplot2)
 library(scales)
 library(scatterpie)
+library(fs)
+
+#Check if the directories exists; create it if it doesn't
+if (!dir_exists("output")) {
+  dir_create("output")
+}
+if (!dir_exists("output/figures")) {
+  dir_create("output")
+}
 
 ####Download####
 data <- TADA_DataRetrieval(characteristicName = c('PFOA ion'
